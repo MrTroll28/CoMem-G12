@@ -1,36 +1,20 @@
-import React, { useState } from "react";
-
-const menuItems = [
-  {
-    title: "Khuyến mãi & Combo",
-    link: "/cm/khuyen-mai-va-combo",
-    subItems: [
-      { name: "Combo chăm sóc da", link: "/cm/combo-cham-soc-da" },
-      { name: "Combo chăm sóc tóc", link: "/cm/combo-cham-soc-toc" },
-      { name: "Combo chăm sóc môi", link: "/cm/combo-moi-xinh" },
-      { name: "Combo khác", link: "/cm/combo-khac" },
-      { name: "Black Green Day", link: "/cm/black-green-day" },
-    ],
-  },
-  {
-    title: "Trang điểm",
-    link: "/cm/trang-diem",
-    subItems: [
-      { name: "Son dưỡng môi", link: "/cm/son-duong-moi" },
-      { name: "Son màu không chì", link: "/cm/son-mau-khong-chi" },
-      { name: "Tẩy da chết môi", link: "/cm/tay-da-chet-moi" },
-      { name: "Kem nền", link: "/cm/kem-nen" },
-      { name: "Kem má", link: "/cm/kem-ma-hong" },
-    ],
-  },
-];
+import React, { useEffect, useState } from "react";
 
 const Navigator = () => {
-  const [hoveredMenu, setHoveredMenu] = useState(null);
 
+  const [menuItems, setMenuItem] = useState([]);
+  const [hoveredMenu, setHoveredMenu] = useState(null);
+  
+  useEffect(() => {
+    fetch("http://localhost:5000/api/menu")
+      .then((response) => response.json())
+      .then((json) => setMenuItem(json))
+      .catch((error) => console.error("Lỗi khi tải JSON:", error));
+  }, []);
+  
   return (
     <nav className="">
-      <ul className="flex space-x-6 p-4">
+      <ul className="flex justify-between items-center relative">
         {menuItems.map((menu, index) => (
           <li
             key={index}
@@ -38,7 +22,10 @@ const Navigator = () => {
             onMouseEnter={() => setHoveredMenu(index)}
             onMouseLeave={() => setHoveredMenu(null)}
           >
-            <a href={menu.link} className="text-white font-medium">
+            <a href={menu.link} className="inline-flex items-center justify-center 
+                                          text-white font-medium text-[15.5px] 
+                                          h-[42px] px-[15px] relative capitalize 
+                                          font-[Verdana] sm:font-[Roboto] md:font-[Tahoma]">
               {menu.title}
             </a>
 

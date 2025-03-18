@@ -48,7 +48,9 @@ const Header = () => {
           </div>
         </div>
         {/* HeaderBottom */}
-        <Navigator />
+        <div className="mx-auto max-w-[1410px] px-[15px] w-full">
+          <Navigator />
+        </div>
       </div>
     </header>
   );

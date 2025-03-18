@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Sale",
+        "link": "/cm/khuyen-mai-va-combo",
+        "subItems": [
+            { "name": "Combo chăm sóc da", "link": "/cm/combo-cham-soc-da" },
+            { "name": "Combo chăm sóc tóc", "link": "/cm/combo-cham-soc-toc" },
+            { "name": "Combo chăm sóc môi", "link": "/cm/combo-moi-xinh" },
+            { "name": "Combo khác", "link": "/cm/combo-khac" },
+            { "name": "Black Green Day", "link": "/cm/black-green-day" }
+        ]
+    },
+
+    {
+        "title": "Trang điểm",
+        "link": "/cm/trang-diem",
+        "subItems": [
+            { "name": "Son dưỡng môi", "link": "/cm/son-duong-moi" },
+            { "name": "Son màu không chì", "link": "/cm/son-mau-khong-chi" },
+            { "name": "Tẩy da chết môi", "link": "/cm/tay-da-chet-moi" },
+            { "name": "Kem nền", "link": "/cm/kem-nen" },
+            { "name": "Kem má", "link": "/cm/kem-ma-hong" }
+        ]
+    },
+    
+    {
+        "title": "Da",
+        "link": "/cm/cham-soc-da",
+        "subItems": [
+            { "name": "Tẩy trang - rửa mặt", "link": "/cm/rua-mat" },
+            { "name": "Toner - xịt khoáng", "link": "/cm/toner-xit-khoan" },
+            { "name": "Dưỡng da", "link": "/cm/duong-da" },
+            { "name": "Kem chống nắng", "link": "/cm/kem-chong-nang" }
+        ]
+    },
+
+    {
+        "title": "Da",
+        "link": "/cm/cham-soc-da",
+        "subItems": [
+            { "name": "Tẩy trang - rửa mặt", "link": "/cm/rua-mat" },
+            { "name": "Toner - xịt khoáng", "link": "/cm/toner-xit-khoan" },
+            { "name": "Dưỡng da", "link": "/cm/duong-da" },
+            { "name": "Kem chống nắng", "link": "/cm/kem-chong-nang" }
+        ]
+    }
+]
