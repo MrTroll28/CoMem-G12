@@ -1,47 +1,137 @@
 [
     {
-        "title": "Sale",
-        "link": "/cm/khuyen-mai-va-combo",
-        "subItems": [
-            { "name": "Combo chăm sóc da", "link": "/cm/combo-cham-soc-da" },
-            { "name": "Combo chăm sóc tóc", "link": "/cm/combo-cham-soc-toc" },
-            { "name": "Combo chăm sóc môi", "link": "/cm/combo-moi-xinh" },
-            { "name": "Combo khác", "link": "/cm/combo-khac" },
-            { "name": "Black Green Day", "link": "/cm/black-green-day" }
-        ]
+      "title": "Sale",
+      "link": "/cm/khuyen-mai-va-combo",
+      "subItems": [
+        {
+          "name": "Combo chăm sóc da",
+          "link": "/cm/combo-cham-soc-da",
+          "products": [
+            {
+              "id": 1,
+              "name": "Combo Kem Dưỡng Ẩm Tơ Tằm + Serum Cấp Ẩm Phục Hồi Tơ Tằm",
+              "image": "https://media.comem.vn/uploads/2024/11/Frame_1068_sp.webp",
+              "tagSale": "-25%",
+              "priceNow": "560.000đ",
+              "priceOld": "750.000đ",
+              "link": "/sp/combo-kem-duong-am-to-tam-serum-cap-am-phuc-hoi-to-tam"
+            },
+            {
+              "id": 2,
+              "name": "Bộ Đôi Dưỡng Ẩm Sâm 1700 Ngừa Lão Hóa Da",
+              "image": "https://media.comem.vn/uploads/2024/11/Frame_1071_sp.webp",
+              "tagSale": "-20%",
+              "priceNow": "1.100.000đ",
+              "priceOld": "1.370.000đ",
+              "link": "/sp/combo-kem-duong-am-to-tam-serum-cap-am-phuc-hoi-to-tam"
+            },
+            {
+                "id": 3,
+                "name": "Combo Gội Xả Ủ Suôn Mượt Phục Hồi Trái Bơ",
+                "image": "https://media.comem.vn/uploads/2024/09/218_sp.webp",
+                "tagSale": "-20%",
+                "priceNow": "560.000đ",
+                "priceOld": "750.000đ",
+                "link": "/sp/combo-kem-duong-am-to-tam-serum-cap-am-phuc-hoi-to-tam"
+            }
+          ]
+        },
+        {
+          "name": "Combo chăm sóc tóc",
+          "link": "/cm/combo-cham-soc-toc",
+          "products": [
+            {
+              "id": 6,
+              "name": "Combo Chăm sóc tóc A",
+              "image": "https://via.placeholder.com/150",
+              "priceNow": "600.000đ",
+              "priceOld": "700.000đ",
+              "link": "/sp/combo-cham-soc-toc-a"
+            }
+          ]
+        },
+        {
+          "name": "Combo chăm sóc môi",
+          "link": "/cm/combo-moi-xinh",
+          "products": []
+        },
+        {
+          "name": "Combo khác",
+          "link": "/cm/combo-khac",
+          "products": []
+        },
+        {
+          "name": "Black Green Day",
+          "link": "/cm/black-green-day",
+          "products": []
+        }
+      ]
     },
-
     {
-        "title": "Trang điểm",
-        "link": "/cm/trang-diem",
-        "subItems": [
-            { "name": "Son dưỡng môi", "link": "/cm/son-duong-moi" },
-            { "name": "Son màu không chì", "link": "/cm/son-mau-khong-chi" },
-            { "name": "Tẩy da chết môi", "link": "/cm/tay-da-chet-moi" },
-            { "name": "Kem nền", "link": "/cm/kem-nen" },
-            { "name": "Kem má", "link": "/cm/kem-ma-hong" }
-        ]
+      "title": "Trang điểm",
+      "link": "/cm/trang-diem",
+      "subItems": [
+        {
+          "name": "Son dưỡng môi",
+          "link": "/cm/son-duong-moi",
+          "products": [
+            {
+              "id": 3,
+              "name": "Son dưỡng môi cao cấp",
+              "image": "https://via.placeholder.com/150",
+              "priceNow": "250.000đ",
+              "priceOld": "300.000đ",
+              "link": "/sp/son-duong-moi-cao-cap"
+            }
+          ]
+        },
+        {
+          "name": "Son màu không chì",
+          "link": "/cm/son-mau-khong-chi",
+          "products": []
+        },
+        {
+          "name": "Tẩy da chết môi",
+          "link": "/cm/tay-da-chet-moi",
+          "products": []
+        },
+        {
+          "name": "Kem nền",
+          "link": "/cm/kem-nen",
+          "products": []
+        },
+        {
+          "name": "Kem má",
+          "link": "/cm/kem-ma-hong",
+          "products": []
+        }
+      ]
     },
-    
     {
-        "title": "Da",
-        "link": "/cm/cham-soc-da",
-        "subItems": [
-            { "name": "Tẩy trang - rửa mặt", "link": "/cm/rua-mat" },
-            { "name": "Toner - xịt khoáng", "link": "/cm/toner-xit-khoan" },
-            { "name": "Dưỡng da", "link": "/cm/duong-da" },
-            { "name": "Kem chống nắng", "link": "/cm/kem-chong-nang" }
-        ]
-    },
-
-    {
-        "title": "Da",
-        "link": "/cm/cham-soc-da",
-        "subItems": [
-            { "name": "Tẩy trang - rửa mặt", "link": "/cm/rua-mat" },
-            { "name": "Toner - xịt khoáng", "link": "/cm/toner-xit-khoan" },
-            { "name": "Dưỡng da", "link": "/cm/duong-da" },
-            { "name": "Kem chống nắng", "link": "/cm/kem-chong-nang" }
-        ]
+      "title": "Da",
+      "link": "/cm/cham-soc-da",
+      "subItems": [
+        {
+          "name": "Tẩy trang - rửa mặt",
+          "link": "/cm/rua-mat",
+          "products": []
+        },
+        {
+          "name": "Toner - xịt khoáng",
+          "link": "/cm/toner-xit-khoan",
+          "products": []
+        },
+        {
+          "name": "Dưỡng da",
+          "link": "/cm/duong-da",
+          "products": []
+        },
+        {
+          "name": "Kem chống nắng",
+          "link": "/cm/kem-chong-nang",
+          "products": []
+        }
+      ]
     }
-]
+  ]
+  
