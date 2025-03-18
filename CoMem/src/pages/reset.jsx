@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useNotification } from "../components/notification"; 
 
 export default function Reset() {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+  const { addNotification } = useNotification(); 
 
   const handleChange = (e) => {
     setEmail(e.target.value);
@@ -13,9 +16,13 @@ export default function Reset() {
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
     if (storedUser && email === storedUser.email) {
-      setMessage("Mật khẩu của bạn là: " + storedUser.password);
+      addNotification(`Mật khẩu của bạn là: ${storedUser.password}`, "success");
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } else {
-      setMessage("Email không tồn tại trong hệ thống.");
+      addNotification("Email không tồn tại trong hệ thống.", "danger");
     }
   };
 
@@ -39,7 +46,13 @@ export default function Reset() {
             Lấy lại mật khẩu
           </button>
         </form>
-        {message && <p className="mt-4 text-center text-red-600">{message}</p>}
+        <button
+          type="button"
+          onClick={() => navigate("/login")}
+          className="mt-4 w-full text-green-600 hover:underline"
+        >
+          Về trang đăng nhập
+        </button>
       </div>
     </div>
   );

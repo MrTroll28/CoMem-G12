@@ -4,10 +4,12 @@ import Home from './pages/Home'
 import Register from "./pages/register";
 import Login from "./pages/login";
 import Reset from "./pages/reset";
+import { NotificationProvider } from "./components/notification"; 
 
 function App() {
   return (
-    <Router> 
+    <NotificationProvider>
+      <Router> 
       <Routes> 
         <Route path="/" element={<Home />} /> 
         <Route path="/register" element={<Register />} />
@@ -15,6 +17,8 @@ function App() {
         <Route path="/reset" element={<Reset />} />
       </Routes> 
     </Router> 
+    </NotificationProvider>
+  
   )
 }
 
