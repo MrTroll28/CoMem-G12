@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary: #3e6807;
+    --color-primary-dark: #2d4c05;
+    --color-primary-light: #4f8409;
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors;
+    }
+
+    .text-primary {
+        @apply text-primary;
+    }
+}
