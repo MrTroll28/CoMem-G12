@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useNotification } from "../components/notification";
+import { Eye, EyeOff } from "lucide-react"; // Import icon
 
-export default function Login() {
+export default  Login=()=> {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [showPassword, setShowPassword] = useState(false); // State để hiển thị mật khẩu
   const navigate = useNavigate();
   const { addNotification } = useNotification();
 
@@ -17,9 +19,7 @@ export default function Login() {
     try {
       const response = await fetch("http://localhost:5000/api/users/login", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
       });
 
@@ -27,7 +27,7 @@ export default function Login() {
 
       if (result.success) {
         addNotification("Đăng nhập thành công!", "success");
-        localStorage.setItem("user", JSON.stringify(result.user)); // Lưu thông tin user vào localStorage
+        localStorage.setItem("user", JSON.stringify(result.user));
         navigate("/");
       } else {
         addNotification(result.message || "Email hoặc mật khẩu không đúng.", "danger");
@@ -51,14 +51,22 @@ export default function Login() {
             onChange={handleChange}
             className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
           />
-          <input
-            type="password"
-            name="password"
-            placeholder="Mật khẩu (*)"
-            value={credentials.password}
-            onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Mật khẩu (*)"
+              value={credentials.password}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
+            />
+            <span
+              className="absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer text-gray-500"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </span>
+          </div>
           <div className="flex justify-between items-center">
             <Link to="/reset" className="text-green-600 hover:underline">Quên mật khẩu?</Link>
             <button

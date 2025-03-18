@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotification } from "../components/notification";
+import { Eye, EyeOff } from "lucide-react";
 
-export default function Register() {
+export default  Register=() =>{
   const [user, setUser] = useState({
     fullName: "",
     phone: "",
@@ -10,6 +11,9 @@ export default function Register() {
     password: "",
     confirmPassword: ""
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
   const navigate = useNavigate();
   const { addNotification } = useNotification();
 
@@ -52,7 +56,6 @@ export default function Register() {
       });
 
       const result = await response.json();
-      console.log(result)
       if (result.success) {
         addNotification(result.message, "success");
         setUser({ fullName: "", phone: "", email: "", password: "", confirmPassword: "" });
@@ -62,7 +65,7 @@ export default function Register() {
       }
     } catch (error) {
       console.error("Lỗi đăng ký:", error);
-      addNotification("Có lỗi sảy ra", "danger");
+      addNotification("Có lỗi xảy ra", "danger");
     }
   };
 
@@ -74,8 +77,21 @@ export default function Register() {
           <input type="text" name="fullName" placeholder="Họ Tên (*)" value={user.fullName} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
           <input type="text" name="phone" placeholder="Số điện thoại (*)" value={user.phone} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
           <input type="email" name="email" placeholder="Email (*)" value={user.email} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
-          <input type="password" name="password" placeholder="Nhập mật khẩu (*)" value={user.password} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
-          <input type="password" name="confirmPassword" placeholder="Nhập lại mật khẩu (*)" value={user.confirmPassword} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+          
+          <div className="relative">
+            <input type={showPassword ? "text" : "password"} name="password" placeholder="Nhập mật khẩu (*)" value={user.password} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+            <span className="absolute right-3 top-4 cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </span>
+          </div>
+          
+          <div className="relative">
+            <input type={showConfirmPassword ? "text" : "password"} name="confirmPassword" placeholder="Nhập lại mật khẩu (*)" value={user.confirmPassword} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+            <span className="absolute right-3 top-4 cursor-pointer" onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+              {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </span>
+          </div>
+          
           <div className="flex justify-between items-center">
             <button type="button" onClick={() => navigate('/login')} className="text-green-600 hover:underline">Về trang đăng nhập</button>
             <button type="submit" className="bg-green-700 text-white px-6 py-3 rounded-md hover:bg-green-800 transition-all">Đăng ký</button>
