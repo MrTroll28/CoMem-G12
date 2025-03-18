@@ -7,8 +7,7 @@ const BackToTopButton = () => {
   // Khi scroll, kiểm tra vị trí và cập nhật state
   useEffect(() => {
     const handleScroll = () => {
-      // Nếu cuộn xuống quá 300px thì hiển thị nút
-      if (window.scrollY > 300) {
+      if (window.scrollY > 3000) {
         setIsVisible(true);
       } else {
         setIsVisible(false);

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchBox from "./Header/SearchBox";
 import Navigator from "./Header/Navigator";
 import { FaStoreAlt } from "react-icons/fa";
@@ -9,15 +10,17 @@ import { FaShoppingCart } from "react-icons/fa";
 const Header = () => {
 
   return (
-    <header className="fixed w-full">
+    <header className="w-full z-50">
       <div className="bg-[url(/HeaderBG.webp)]">
         {/* HeaderTop */}
         <div className="block py-[12px] mx-auto max-w-[1410px] px-[15px] w-full">
           <div className="flex justify-between items-center relative">
             {/* Logo */}
-            <div className="max-w-full pr-[15px] w-[300px]">
-              <div className="bg-[url(/background-comem.webp)] bg-[0px_-82px] block h-[60px] w-[165px]"></div>
-            </div>
+            <Link to="/">
+              <div className="max-w-full pr-[15px] w-[300px]">
+                <div className="bg-[url(/background-comem.webp)] bg-[0px_-82px] block h-[60px] w-[165px]"></div>
+              </div>
+            </Link>
             {/* SearchBox */}
             <div className="relative flex-1 mr-[70px]">
               <SearchBox />
