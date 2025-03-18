@@ -1,0 +1,44 @@
+[
+  {
+    "fullName": "Nguyen Van A",
+    "phone": "0123456789",
+    "email": "test@example.com",
+    "password": "123456",
+    "id": "001"
+  },
+  {
+    "id": 1742289269501,
+    "fullName": "Nhan",
+    "phone": "0123456789",
+    "email": "nhan@gmail.com",
+    "password": "123"
+  },
+  {
+    "id": 1742289365140,
+    "fullName": "Nhan",
+    "phone": "0123456789",
+    "email": "nha1n@gmail.com",
+    "password": "123"
+  },
+  {
+    "id": 1742289798809,
+    "fullName": "Nhan",
+    "phone": "0123456789",
+    "email": "nha2n@gmail.com",
+    "password": "123"
+  },
+  {
+    "id": 1742289798810,
+    "fullName": "Nhan",
+    "phone": "0123456789",
+    "email": "nha21n@gmail.com",
+    "password": "123"
+  },
+  {
+    "id": 1742289798811,
+    "fullName": "NHan",
+    "phone": "0123456789",
+    "email": "nhantran.03042021@gmail.com",
+    "password": "huhu"
+  }
+]

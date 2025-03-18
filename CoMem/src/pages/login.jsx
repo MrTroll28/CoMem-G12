@@ -1,27 +1,40 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useNotification } from "../components/notification"; 
+import { useNotification } from "../components/notification";
 
 export default function Login() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
-  const { addNotification } = useNotification(); 
+  const { addNotification } = useNotification();
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    
+    try {
+      const response = await fetch("http://localhost:5000/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(credentials),
+      });
 
-    if (storedUser && credentials.email === storedUser.email && credentials.password === storedUser.password) {
-      addNotification("Đăng nhập thành công!", "success"); 
-      
+      const result = await response.json();
+
+      if (result.success) {
+        addNotification("Đăng nhập thành công!", "success");
+        localStorage.setItem("user", JSON.stringify(result.user)); // Lưu thông tin user vào localStorage
         navigate("/");
-      
-    } else {
-      addNotification("Email hoặc mật khẩu không đúng.", "danger"); 
+      } else {
+        addNotification(result.message || "Email hoặc mật khẩu không đúng.", "danger");
+      }
+    } catch (error) {
+      console.error("Lỗi đăng nhập:", error);
+      addNotification("Lỗi kết nối đến server.", "danger");
     }
   };
 
