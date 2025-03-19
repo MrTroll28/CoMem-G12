@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Navigator = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -28,14 +29,13 @@ const Navigator = () => {
             onMouseEnter={() => setHoveredMenu(index)}
             onMouseLeave={() => setHoveredMenu(null)}
           >
-            <a
-              href={menu.link}
+            <Link to={menu.link}
               className="inline-flex items-center text-white font-medium 
                          text-[15.5px] h-[42px] px-[15px] capitalize 
                          hover:border-b-2 border-grey-500 ease-in-out transition-all"
             >
               {menu.title}
-            </a>
+            </Link>
 
             {/* Mega Menu xuất hiện khi hover vào menu chính */}
             {hoveredMenu === index && (
@@ -57,13 +57,12 @@ const Navigator = () => {
                             : "hover:bg-gray-100"
                         }`}
                       >
-                        <a
-                          href={sub.link}
+                        <Link to={sub.link}
                           className="flex items-center justify-between text-gray-700"
                         >
                           {sub.name}
                           <FaAngleRight className="text-gray-400 ml-2" />
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -88,7 +87,7 @@ const Navigator = () => {
                           <img
                             src={product.image}
                             alt={product.name}
-                            className="w-full object-cover"
+                            className="w-full max-h-[165px] object-cover"
                           />
 
                           {/* Tên sản phẩm */}
