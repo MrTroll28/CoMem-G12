@@ -29,7 +29,7 @@ const Header = () => {
             <div className="flex items-center justify-center mx-[-5px]">
               <a href="/" className="mr-[30px] flex items-center">
                   <FaStoreAlt className="text-white text-[34px]"/>
-                  <div class="text-[13px] font-medium ml-[8px] uppercase text-white">
+                  <div className="text-[13px] font-medium ml-[8px] uppercase text-white">
                       hệ thống
                       <br />
                       cửa hàng
