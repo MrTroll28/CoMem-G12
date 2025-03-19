@@ -2,113 +2,101 @@
     {
         "id": 1,
         "name": "Classic White T-Shirt",
-        "price": 29.99,
-        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&auto=format",
-        "category": "Clothing"
+        "priceNow": 29.99,
+        "priceOld": 39.99,
+        "tagSale": "-25%",
+        "image": "https://images.pexels.com/photos/3760271/pexels-photo-3760271.jpeg",
+        "category": "Clothing",
+        "link": "/product/classic-white-tshirt"
     },
     {
         "id": 2,
         "name": "Leather Crossbody Bag",
-        "price": 89.99,
-        "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format",
-        "category": "Accessories"
+        "priceNow": 89.99,
+        "priceOld": 120.00,
+        "tagSale": "-25%",
+        "image": "https://images.pexels.com/photos/2916814/pexels-photo-2916814.jpeg",
+        "category": "Accessories",
+        "link": "/product/leather-crossbody-bag"
     },
     {
         "id": 3,
         "name": "Denim Jacket",
-        "price": 79.99,
-        "image": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&auto=format",
-        "category": "Clothing"
+        "priceNow": 79.99,
+        "priceOld": 99.99,
+        "tagSale": "-20%",
+        "image": "https://images.pexels.com/photos/5325885/pexels-photo-5325885.jpeg",
+        "category": "Clothing",
+        "link": "/product/denim-jacket"
     },
     {
         "id": 4,
         "name": "Gold Watch",
-        "price": 199.99,
+        "priceNow": 199.99,
+        "priceOld": 250.00,
+        "tagSale": "-20%",
         "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&auto=format",
-        "category": "Accessories"
+        "category": "Accessories",
+        "link": "/product/gold-watch"
     },
     {
         "id": 5,
         "name": "Summer Dress",
-        "price": 59.99,
-        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&auto=format",
-        "category": "Clothing"
+        "priceNow": 59.99,
+        "priceOld": 79.99,
+        "tagSale": "-25%",
+        "image": "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
+        "category": "Clothing",
+        "link": "/product/summer-dress"
     },
     {
         "id": 6,
         "name": "Sunglasses",
-        "price": 129.99,
-        "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format",
-        "category": "Accessories"
+        "priceNow": 129.99,
+        "priceOld": 159.99,
+        "tagSale": "-18%",
+        "image": "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg",
+        "category": "Accessories",
+        "link": "/product/sunglasses"
     },
     {
         "id": 7,
         "name": "Running Sneakers",
-        "price": 99.99,
-        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&auto=format",
-        "category": "Shoes"
+        "priceNow": 99.99,
+        "priceOld": 129.99,
+        "tagSale": "-23%",
+        "image": "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
+        "category": "Shoes",
+        "link": "/product/running-sneakers"
     },
     {
         "id": 8,
-        "name": "Leather Wallet",
-        "price": 49.99,
-        "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format",
-        "category": "Accessories"
+        "name": "Casual Backpack",
+        "priceNow": 69.99,
+        "priceOld": 89.99,
+        "tagSale": "-22%",
+        "image": "https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwaf405543/images/hi-res/48525_FGE.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6",
+        "category": "Accessories",
+        "link": "/product/casual-backpack"
     },
     {
         "id": 9,
-        "name": "Formal Blazer",
-        "price": 149.99,
-        "image": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&auto=format",
-        "category": "Clothing"
+        "name": "Chino Pants",
+        "priceNow": 59.99,
+        "priceOld": 79.99,
+        "tagSale": "-25%",
+        "image": "https://images.pexels.com/photos/6331023/pexels-photo-6331023.jpeg",
+        "category": "Clothing",
+        "link": "/product/chino-pants"
     },
     {
         "id": 10,
-        "name": "Casual Backpack",
-        "price": 69.99,
-        "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&auto=format",
-        "category": "Accessories"
-    },
-    {
-        "id": 11,
-        "name": "Chino Pants",
-        "price": 59.99,
-        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&auto=format",
-        "category": "Clothing"
-    },
-    {
-        "id": 12,
-        "name": "Sports Watch",
-        "price": 129.99,
-        "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format",
-        "category": "Accessories"
-    },
-    {
-        "id": 13,
-        "name": "Hiking Boots",
-        "price": 139.99,
-        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&auto=format",
-        "category": "Shoes"
-    },
-    {
-        "id": 14,
-        "name": "Silk Scarf",
-        "price": 39.99,
-        "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format",
-        "category": "Accessories"
-    },
-    {
-        "id": 15,
-        "name": "Polo Shirt",
-        "price": 49.99,
-        "image": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&auto=format",
-        "category": "Clothing"
-    },
-    {
-        "id": 16,
-        "name": "Vintage Hat",
-        "price": 34.99,
-        "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&auto=format",
-        "category": "Accessories"
+        "name": "Formal Blazer",
+        "priceNow": 149.99,
+        "priceOld": 199.99,
+        "tagSale": "-25%",
+        "image": "https://5.imimg.com/data5/UA/WU/MY-37658576/mens-formal-blazer.jpg",
+        "category": "Clothing",
+        "link": "/product/formal-blazer"
     }
 ]
