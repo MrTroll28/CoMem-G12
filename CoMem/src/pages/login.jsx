@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useNotification } from "../components/notification";
+import { useNotification } from "../components/Notification";
 import { Eye, EyeOff } from "lucide-react"; // Import icon
 
 export default  Login=()=> {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useNotification } from "../components/notification";
+import { useNotification } from "../components/Notification";
 
 export default  Reset=()=> {
   const [email, setEmail] = useState("");

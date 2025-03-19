@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useNotification } from "../components/notification";
+import { useNotification } from "../components/Notification";
 import { Eye, EyeOff } from "lucide-react";
 
 export default  Register=() =>{
@@ -11,6 +11,7 @@ export default  Register=() =>{
     password: "",
     confirmPassword: ""
   });
+  
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   
