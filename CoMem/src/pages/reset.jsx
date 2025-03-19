@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotification } from "../components/Notification";
 
-export default  Reset=()=> {
+const  Reset=()=> {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -136,3 +136,6 @@ export default  Reset=()=> {
     </div>
   );
 }
+
+
+export default Reset
