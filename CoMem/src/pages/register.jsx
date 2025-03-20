@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useNotification } from "../components/Notification";
 import { Eye, EyeOff } from "lucide-react";
 
-export default  Register=() =>{
+const  Register=() =>{
   const [user, setUser] = useState({
     fullName: "",
     phone: "",
@@ -102,3 +102,4 @@ export default  Register=() =>{
     </div>
   );
 }
+ export default Register
