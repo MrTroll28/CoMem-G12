@@ -8,6 +8,7 @@ import Product from './pages/Product'
 import Register from "./pages/register";
 import Login from "./pages/login";
 import Reset from "./pages/reset";
+import ProductDetail from './pages/ProductDetail';
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reset" element={<Reset />} />
 
-       
+        <Route path="/product/:productId" element={<ProductDetail />} />
+
         <Route path="/product" element={<Product />} />
 
       </Routes> 
