@@ -7,7 +7,9 @@
         "tagSale": "-25%",
         "image": "https://images.pexels.com/photos/3760271/pexels-photo-3760271.jpeg",
         "category": "Clothing",
-        "link": "/product/classic-white-tshirt"
+        "link": "/product/classic-white-tshirt",
+        "soldQuantity": 120,
+        "isNew": false
     },
     {
         "id": 2,
@@ -17,7 +19,9 @@
         "tagSale": "-25%",
         "image": "https://images.pexels.com/photos/2916814/pexels-photo-2916814.jpeg",
         "category": "Accessories",
-        "link": "/product/leather-crossbody-bag"
+        "link": "/product/leather-crossbody-bag",
+        "soldQuantity": 85,
+        "isNew": true
     },
     {
         "id": 3,
@@ -27,7 +31,9 @@
         "tagSale": "-20%",
         "image": "https://images.pexels.com/photos/5325885/pexels-photo-5325885.jpeg",
         "category": "Clothing",
-        "link": "/product/denim-jacket"
+        "link": "/product/denim-jacket",
+        "soldQuantity": 95,
+        "isNew": false
     },
     {
         "id": 4,
@@ -37,7 +43,9 @@
         "tagSale": "-20%",
         "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&auto=format",
         "category": "Accessories",
-        "link": "/product/gold-watch"
+        "link": "/product/gold-watch",
+        "soldQuantity": 45,
+        "isNew": true
     },
     {
         "id": 5,
@@ -47,7 +55,9 @@
         "tagSale": "-25%",
         "image": "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
         "category": "Clothing",
-        "link": "/product/summer-dress"
+        "link": "/product/summer-dress",
+        "soldQuantity": 110,
+        "isNew": true
     },
     {
         "id": 6,
@@ -57,7 +67,9 @@
         "tagSale": "-18%",
         "image": "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg",
         "category": "Accessories",
-        "link": "/product/sunglasses"
+        "link": "/product/sunglasses",
+        "soldQuantity": 73,
+        "isNew": false
     },
     {
         "id": 7,
@@ -67,7 +79,9 @@
         "tagSale": "-23%",
         "image": "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
         "category": "Shoes",
-        "link": "/product/running-sneakers"
+        "link": "/product/running-sneakers",
+        "soldQuantity": 130,
+        "isNew": true
     },
     {
         "id": 8,
@@ -77,7 +91,9 @@
         "tagSale": "-22%",
         "image": "https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwaf405543/images/hi-res/48525_FGE.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6",
         "category": "Accessories",
-        "link": "/product/casual-backpack"
+        "link": "/product/casual-backpack",
+        "soldQuantity": 95,
+        "isNew": false
     },
     {
         "id": 9,
@@ -87,7 +103,9 @@
         "tagSale": "-25%",
         "image": "https://images.pexels.com/photos/6331023/pexels-photo-6331023.jpeg",
         "category": "Clothing",
-        "link": "/product/chino-pants"
+        "link": "/product/chino-pants",
+        "soldQuantity": 80,
+        "isNew": true
     },
     {
         "id": 10,
@@ -97,6 +115,8 @@
         "tagSale": "-25%",
         "image": "https://5.imimg.com/data5/UA/WU/MY-37658576/mens-formal-blazer.jpg",
         "category": "Clothing",
-        "link": "/product/formal-blazer"
+        "link": "/product/formal-blazer",
+        "soldQuantity": 60,
+        "isNew": false
     }
 ]

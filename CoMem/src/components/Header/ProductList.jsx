@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 
-const ProductList = () => {
+const ProductList = ({ title, url, image }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading]   = useState(true);
   const [error, setError]       = useState(null);
-
-  // currentIndex là vị trí bắt đầu của 4 sản phẩm hiện tại
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Số sản phẩm hiển thị trên 1 "slide"
+  // Số sản phẩm hiển thị trên 1 slide
   const itemsPerPage = 4;
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('http://localhost:5000/api/products' + url)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -28,7 +26,7 @@ const ProductList = () => {
         setError(err.message);
         setLoading(false);
       });
-  }, []);
+  }, [url]);
 
   const handleNext = () => {
     if (currentIndex + itemsPerPage < products.length) {
@@ -54,12 +52,10 @@ const ProductList = () => {
 
   return (
     <section className="my-8 relative">
-      {/* Tiêu đề */}
       <h2 className="text-center text-xl md:text-2xl font-bold uppercase mb-6">
-        Sản phẩm bán chạy nhất
+        {title}
       </h2>
 
-      {/* Nút Prev */}
       <button
         onClick={handlePrev}
         disabled={currentIndex === 0}
@@ -68,7 +64,6 @@ const ProductList = () => {
         <FaAngleLeft size={20} />
       </button>
 
-      {/* Danh sách sản phẩm */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {visibleProducts.map((product) => (
           <div
@@ -84,17 +79,33 @@ const ProductList = () => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-40 object-contain mb-2"
+              className="w-full h-40 object-cover mb-2"
             />
+
             <h3 className="text-sm font-medium text-gray-800 mb-1 line-clamp-2">
               {product.name}
             </h3>
-            <p className="text-orange-600 font-bold">{product.price}</p>
+
+            {/* Hiển thị giá mới, giá cũ và tagSale */}
+            <div className="flex flex-col items-center">
+              <div className="flex items-center space-x-2">
+                <span className="text-orange-600 font-bold">
+                  ${product.priceNow.toFixed(2)}
+                </span>
+                <span className="text-gray-500 line-through">
+                  ${product.priceOld.toFixed(2)}
+                </span>
+              </div>
+              {product.tagSale && (
+                <span className="mt-1 text-xs text-white bg-red-500 rounded px-2 py-0.5">
+                  {product.tagSale}
+                </span>
+              )}
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Nút Next */}
       <button
         onClick={handleNext}
         disabled={currentIndex + itemsPerPage >= products.length}
@@ -102,9 +113,12 @@ const ProductList = () => {
       >
         <FaAngleRight size={20} />
       </button>
+
+      <div className="mt-8">
+        <div className="w-full h-45" style={{ backgroundImage: `url(${image})` }}></div>
+      </div>
     </section>
   );
 };
 
 export default ProductList;
-    

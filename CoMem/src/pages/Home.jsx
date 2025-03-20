@@ -13,9 +13,11 @@ const Home = () => {
       <Header />
       <HeroSection />
       <div className="container mx-auto py-10">
-        <ProductList />
+        <ProductList title="Sản phẩm bán chạy nhất" url="/best-selling" image="/banner1.png"/>
+        <ProductList title="Sản phẩm mới ra mắt" url="/new" image="/banner2.png"/>
+        <ProductList title="Sản phẩm bán chạy" url="" image="https://byvn.net/w2T5"/>
         <FeatureSection />
-      </div>
+      </div>  
       <ContactFloatButton />
       <BackToTopButton />
       <Footer />
