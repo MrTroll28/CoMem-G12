@@ -7,7 +7,7 @@ const BackToTopButton = () => {
   // Khi scroll, kiểm tra vị trí và cập nhật state
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 3000) {
+      if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
