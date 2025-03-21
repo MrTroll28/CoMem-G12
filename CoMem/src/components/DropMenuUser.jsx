@@ -10,9 +10,12 @@ const DropMenuUser = () => {
   const handleMenuClick = ({ key }) => {
     if (key === '1') {
       
-        navigate('/inforuser');
-      
-    } else {
+      navigate('/infouser');
+    } else if(key==='3'){
+      navigate('/feedback')
+    } 
+
+    else {
       message.info(`Click on item ${key}`);
     }
   };

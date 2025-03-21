@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-
+import { v4 as uuidv4 } from "uuid";
 
 const NotificationContext = createContext();
 
@@ -20,12 +20,12 @@ export const NotificationProvider = ({ children }) => {
   const [notifications, dispatch] = useReducer(notificationReducer, []);
 
   const addNotification = (message, type = "success") => {
-    const id = Date.now();
+    const id = uuidv4(); // ✅ Tạo ID duy nhất
     dispatch({
       type: "ADD_NOTIFICATION",
       payload: { id, message, type }
     });
-
+  
     setTimeout(() => {
       dispatch({ type: "REMOVE_NOTIFICATION", payload: id });
     }, 5000);

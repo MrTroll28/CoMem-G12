@@ -8,8 +8,9 @@ import Product from './pages/Product'
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Reset from "./pages/Reset";
-import InforUser from "./pages/InforUser";
+import InfoUser from "./pages/InfoUser";
 import { useState, useEffect } from "react";
+import FeedBack from "./pages/Feedback";
 
 
 function App() {
@@ -40,8 +41,9 @@ function App() {
         <Route path="/register" element={<Register />} /> 
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/reset" element={<Reset />} />
-        <Route path="/inforuser" element={<InforUser isLoggedin={isLoggedIn} onLogout={handleLogout}/>} />
+        <Route path="/infouser" element={<InfoUser isLoggedin={isLoggedIn} onLogout={handleLogout}/>} />
         <Route path="/product" element={<Product />} />
+        <Route path="/feedback" element={<FeedBack />} />
       </Routes> 
     </Router> 
     </NotificationProvider>

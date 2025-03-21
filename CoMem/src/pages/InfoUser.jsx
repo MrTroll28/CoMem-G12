@@ -4,10 +4,10 @@ import Footer from '../components/Footer';
 import UserMenu from '../components/User/UserMenu';
 import { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom";
-import Infor from '../components/User/Infor';
+import Info from '../components/User/Info';
 import { useNotification } from '../components/Notification';
 
-const InforUser=({isLoggedin,onLogout})=>{
+const InfoUser=({isLoggedin,onLogout})=>{
     console.log("user>> ",isLoggedin)
     const navigate = useNavigate();
     const { addNotification } = useNotification();
@@ -23,12 +23,12 @@ const InforUser=({isLoggedin,onLogout})=>{
         <>
             <Header/>
 
-            <div className='h-[500px] flex items-center justify-start  px-6 '>
-                <div className='ml-40'>
-                 <UserMenu onLogout={onLogout}  />
+                <div className='h-[500px] flex items-center justify-start  px-6 '>
+                    <div className='ml-40'>
+                    <UserMenu onLogout={onLogout}  />
+                    </div>
+                    <Info />
                 </div>
-                <Infor />
-            </div>
 
             
             <Footer/>
@@ -37,4 +37,4 @@ const InforUser=({isLoggedin,onLogout})=>{
     
 }
 
-export default InforUser;
+export default InfoUser;

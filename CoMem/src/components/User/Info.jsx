@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Infor=()=>{
+const Info=()=>{
     return(
         <div className="w-[50%] mx-auto p-6 bg-white rounded-xl shadow-md">
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Thông tin tài khoản</h2>
@@ -38,4 +38,4 @@ const Infor=()=>{
     )
 }
 
-export default Infor;
+export default Info;

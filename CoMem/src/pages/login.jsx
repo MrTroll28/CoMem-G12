@@ -10,7 +10,7 @@ const  Login=({onLogin})=> {
   const [showPassword, setShowPassword] = useState(false); 
   const navigate = useNavigate();
   const { addNotification } = useNotification();
-  const [inforUser,setInforUser]=useState({})
+  const [infoUser,setInfoUser]=useState({})
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
