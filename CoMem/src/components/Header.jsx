@@ -6,6 +6,7 @@ import { FaStoreAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
+import DropMenuUser from "./DropMenuUser";
 
 const Header = () => {
 
@@ -36,7 +37,7 @@ const Header = () => {
                   </div>
               </a>
               <div className="mr-[30px]">
-                <a href=""><FaUser className="text-white text-[28px]"/></a>
+                <a href=""><DropMenuUser/></a>
               </div>
               <div className="mr-[30px]">
                 <a href=""><FaHeart className="text-white text-[28px]"/></a>

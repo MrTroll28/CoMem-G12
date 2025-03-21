@@ -7,7 +7,7 @@ import { Autoplay } from 'swiper/modules';
 const slides = [
   { id: 1, image: '/banner1.png'},
   { id: 2, image: '/banner2.png'},
-  { id: 3, image: 'https://byvn.net/w2T5'}
+  { id: 3, image: '/banner3.png'}
 ];
 
 const HeroSection = () => {

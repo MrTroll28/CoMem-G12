@@ -2,13 +2,15 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useNotification } from "../components/Notification";
 import { Eye, EyeOff } from "lucide-react"; // Import icon
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-const  Login=()=> {
+const  Login=({onLogin})=> {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
-  const [showPassword, setShowPassword] = useState(false); // State để hiển thị mật khẩu
+  const [showPassword, setShowPassword] = useState(false); 
   const navigate = useNavigate();
   const { addNotification } = useNotification();
-
+  const [infoUser,setInfoUser]=useState({})
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -28,6 +30,7 @@ const  Login=()=> {
       if (result.success) {
         addNotification("Đăng nhập thành công!", "success");
         localStorage.setItem("user", JSON.stringify(result.user));
+        onLogin();
         navigate("/");
       } else {
         addNotification(result.message || "Email hoặc mật khẩu không đúng.", "danger");
@@ -37,8 +40,10 @@ const  Login=()=> {
       addNotification("Lỗi kết nối đến server.", "danger");
     }
   };
-
+  //console.log("Trang thai login>>"+onLogin.value)
   return (
+    <>
+    <Header/>
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-[400px] border border-gray-300">
         <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Đăng Nhập</h2>
@@ -82,6 +87,8 @@ const  Login=()=> {
         </p>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 

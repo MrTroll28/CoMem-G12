@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotification } from "../components/Notification";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const  Reset=()=> {
   const [email, setEmail] = useState("");
@@ -77,7 +79,9 @@ const  Reset=()=> {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <>
+    <Header/>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-[400px] border border-gray-300">
         <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Quên Mật Khẩu</h2>
 
@@ -134,6 +138,8 @@ const  Reset=()=> {
         </button>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 
