@@ -72,3 +72,36 @@ exports.getBestSellingProducts = (req, res) => {
     }
   });
 };
+
+
+exports.getClothingProducts = (req, res) => {
+  const filePath = path.join(__dirname, "../data/product.json");
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: "Lỗi đọc dữ liệu" });
+    }
+    try {
+      const products = JSON.parse(data);
+      const clothingProducts = products.filter((p) => p.category === "Clothing");
+      res.json(clothingProducts);
+    } catch (parseError) {
+      return res.status(500).json({ error: "Lỗi parse JSON", details: parseError.message });
+    }
+  });
+};
+
+exports.getAccessoriesProducts = (req, res) => {
+  const filePath = path.join(__dirname, "../data/product.json");
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: "Lỗi đọc dữ liệu" });
+    }
+    try {
+      const products = JSON.parse(data);
+      const accessoriesProducts = products.filter((p) => p.category === "Accessories");
+      res.json(accessoriesProducts);
+    } catch (parseError) {
+      return res.status(500).json({ error: "Lỗi parse JSON", details: parseError.message });
+    }
+  });
+};

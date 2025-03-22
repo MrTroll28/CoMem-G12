@@ -15,7 +15,8 @@ const Home = () => {
       <div className="container mx-auto py-10">
         <ProductList title="Sản phẩm bán chạy nhất" url="/best-selling" image="/pli1.png"/>
         <ProductList title="Sản phẩm mới ra mắt" url="/new" image="/pli2.png"/>
-        <ProductList title="Sản phẩm bán chạy" url="" image="pli2.png"/>
+        <ProductList title="Sản phẩm quần áo" url="/clothing" image="pli2.png"/>
+        <ProductList title="Sản phẩm phụ kiện" url="/accessories" image="pli2.png"/>
         <FeatureSection />
       </div>  
       <ContactFloatButton />

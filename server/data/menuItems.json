@@ -10,7 +10,7 @@
           {
             "id": 1,
             "name": "Áo Thun Cổ Tròn Basic",
-            "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ4zzkZLE_Q0ErzBjowqCYCjuX2Fb_hvEqojwOPo1zMbRYXcXvSOMdRGgCeonW1_JM-z7wcPf0F3hVbQEgMtn5TH1nkF69l_ouuCC45xltxy0dDlx-Oa3vUlnEAx8ATbiYtpjFNtA&usqp=CAc",
+            "image": "https://byvn.net/lwgR",
             "tagSale": "-20%",
             "priceNow": "200.000đ",
             "priceOld": "250.000đ",
@@ -19,7 +19,7 @@
           {
             "id": 2,
             "name": "Áo Thun Polo Nam",
-            "image": "https://example.com/ao-thun-2.jpg",
+            "image": "https://byvn.net/gSgM",
             "tagSale": "-15%",
             "priceNow": "300.000đ",
             "priceOld": "350.000đ",
@@ -34,7 +34,7 @@
           {
             "id": 3,
             "name": "Quần Jeans Slim Fit",
-            "image": "https://example.com/quan-jeans-1.jpg",
+            "image": "https://product.hstatic.net/200000325151/product/xucqn-jean-slim-fit-4_472c3f0ac7ea4248b4e9892783114695.png",
             "priceNow": "450.000đ",
             "priceOld": "500.000đ",
             "link": "/sp/quan-jeans-slim-fit"
@@ -54,7 +54,7 @@
           {
             "id": 4,
             "name": "Đầm Dự Tiệc Thanh Lịch",
-            "image": "https://example.com/dam-1.jpg",
+            "image": "https://bizweb.dktcdn.net/100/368/426/products/dam-xoe-du-tiec-cuoi-8-jpeg.jpg?v=1708837009900",
             "tagSale": "-25%",
             "priceNow": "600.000đ",
             "priceOld": "800.000đ",
@@ -65,7 +65,26 @@
       {
         "name": "Chân váy nữ",
         "link": "/product/chan-vay-nu",
-        "products": []
+        "products": [
+          {
+            "id": 5,
+            "name": "Chân Váy Xòe Nữ",
+            "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT2sJxlkXjaQ7cPIrqlQyJkIXrRu2R8JK5YUzs3ZBx6b4x5NonuxX6MR0mG2pmEbRVS316YuZzkgfcNQDzb3WD9vDLrMZwFKhaMsVM7CzG8Ixx88ZN2KCL2YbGtUuRlqw&usqp=CAc",
+            "tagSale": "-10%",
+            "priceNow": "350.000đ",
+            "priceOld": "400.000đ",
+            "link": "/sp/chan-vay-xoe-nu"
+          },
+          {
+            "id": 6,
+            "name": "Chân Váy Dài Nữ",
+            "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRAxPFIqTX2QGghyyEfVEy4UcXwuOLleAC8J1rHm1P4b4lAJ0kRHIJIR1yNBVAaouobygYuhY2fWgAA8HnYW2QiqruE6M5g8oSa9kcQhUoTuldvW8_kCg65T695eZ7ZcMq9uc9gGFxr&usqp=CAc",
+            "tagSale": "-15%",
+            "priceNow": "450.000đ",
+            "priceOld": "500.000đ",
+            "link": "/sp/chan-vay-dai-nu"
+          }
+        ]
       }
     ]
   },
@@ -78,9 +97,9 @@
         "link": "/product/tui-xach-nu",
         "products": [
           {
-            "id": 5,
+            "id": 7,
             "name": "Túi Xách Da Cao Cấp",
-            "image": "https://example.com/tui-xach-1.jpg",
+            "image": "https://www.gento.vn/wp-content/uploads/2023/05/tui-xach-nu-da-bo-1-9.jpg",
             "tagSale": "-30%",
             "priceNow": "700.000đ",
             "priceOld": "1.000.000đ",
@@ -91,7 +110,26 @@
       {
         "name": "Đồng hồ nam",
         "link": "/product/dong-ho-nam",
-        "products": []
+        "products": [
+          {
+            "id": 8,
+            "name": "Đồng Hồ Nam Cao Cấp",
+            "image": "https://product.hstatic.net/200000494375/product/z6018703197270_3fd3c44f283f00f1abfe30dd1e1f1512_981d1960b6e0469ba498054218d9404f_master.jpg",
+            "tagSale": "-15%",
+            "priceNow": "1.700.000đ",
+            "priceOld": "2.000.000đ",
+            "link": "/sp/dong-ho-nam-cao-cap"
+          },
+          {
+            "id": 9,
+            "name": "Đồng Hồ Nam Thể Thao",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThdBxp6O6hN4maddYlI_XcLowIKWG9fCcMaA&s",
+            "tagSale": "-10%",
+            "priceNow": "900.000đ",
+            "priceOld": "1.000.000đ",
+            "link": "/sp/dong-ho-nam-the-thao"
+          }
+        ]
       }
     ]
   },
@@ -104,9 +142,9 @@
         "link": "/product/giay-the-thao-nam",
         "products": [
           {
-            "id": 6,
+            "id": 10,
             "name": "Giày Thể Thao Sneaker",
-            "image": "https://example.com/giay-the-thao-1.jpg",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZFV4aKh7DrzLVAMbizYmZxt7YlhMonMsNA&s",
             "tagSale": "-10%",
             "priceNow": "900.000đ",
             "priceOld": "1.000.000đ",
@@ -125,9 +163,9 @@
         "link": "/product/ao-thun-tre-em",
         "products": [
           {
-            "id": 7,
+            "id": 11,
             "name": "Áo Thun Họa Tiết Trẻ Em",
-            "image": "https://example.com/ao-thun-tre-em-1.jpg",
+            "image": "https://cdn.becungshop.vn/images/500x500/ao-thun-co-tru-in-hoa-tiet-danh-cho-be-trai-p269768ef50ba1-500x500.jpg",
             "tagSale": "-5%",
             "priceNow": "150.000đ",
             "priceOld": "160.000đ",

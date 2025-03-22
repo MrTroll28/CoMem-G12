@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const ProductList = ({ title, url, image }) => {
   const [products, setProducts] = useState([]);
@@ -7,7 +8,6 @@ const ProductList = ({ title, url, image }) => {
   const [error, setError]       = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Số sản phẩm hiển thị trên 1 slide
   const itemsPerPage = 4;
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const ProductList = ({ title, url, image }) => {
   const visibleProducts = products.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
-    <section className="my-8 relative">
+    <section className="my-10 relative">
       <h2 className="text-center text-xl md:text-2xl font-bold uppercase mb-6">
         {title}
       </h2>
@@ -66,9 +66,10 @@ const ProductList = ({ title, url, image }) => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {visibleProducts.map((product) => (
-          <div
+          <Link
+            to={`/product/${product.id}`}
             key={product.id}
-            className="relative bg-white border border-gray-200 rounded-lg p-4 shadow-sm text-center"
+            className="relative bg-white border border-gray-200 rounded-lg p-4 shadow-sm text-center block"
           >
             {product.isNew && (
               <span className="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
@@ -102,7 +103,7 @@ const ProductList = ({ title, url, image }) => {
                 </span>
               )}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -114,7 +115,7 @@ const ProductList = ({ title, url, image }) => {
         <FaAngleRight size={20} />
       </button>
 
-      <div className="mt-8">
+      <div className="mt-10 mb-20">
         <div className="w-full h-45" style={{ backgroundImage: `url(${image})` }}></div>
       </div>
     </section>
