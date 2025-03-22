@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const ProductList = ({ title, url, image }) => {
+const ProductList = ({ url, image }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading]   = useState(true);
   const [error, setError]       = useState(null);
@@ -51,15 +51,15 @@ const ProductList = ({ title, url, image }) => {
   const visibleProducts = products.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
-    <section className="my-10 relative">
+    <section className="my-10 relative mb-20">
       <h2 className="text-center text-xl md:text-2xl font-bold uppercase mb-6">
-        {title}
+        <div className="w-full h-30 bg-no-repeat bg-center bg-container" style={{ backgroundImage: `url(${image})` }}></div>
       </h2>
 
       <button
         onClick={handlePrev}
         disabled={currentIndex === 0}
-        className="absolute left-[-40px] top-[180px] transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 p-2 rounded-full disabled:opacity-50"
+        className="absolute left-[-40px] top-[280px] transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 p-2 rounded-full disabled:opacity-50"
       >
         <FaAngleLeft size={20} />
       </button>
@@ -110,14 +110,10 @@ const ProductList = ({ title, url, image }) => {
       <button
         onClick={handleNext}
         disabled={currentIndex + itemsPerPage >= products.length}
-        className="absolute right-[-40px] top-[180px] transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 p-2 rounded-full disabled:opacity-50"
+        className="absolute right-[-40px] top-[280px] transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 p-2 rounded-full disabled:opacity-50"
       >
         <FaAngleRight size={20} />
       </button>
-
-      <div className="mt-10 mb-20">
-        <div className="w-full h-45" style={{ backgroundImage: `url(${image})` }}></div>
-      </div>
     </section>
   );
 };
