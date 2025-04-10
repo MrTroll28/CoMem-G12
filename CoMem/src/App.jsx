@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Reset from "./pages/Reset";
 import InfoUser from "./pages/InfoUser";
+
 import FeedBack from "./pages/Feedback";
 import Voucher from "./pages/Vouchers";
 import { UserProvider } from "./context/UserContext"; 
@@ -29,12 +30,13 @@ function App() {
             <Route path="/product" element={<Product />} />
             <Route path="/feedback" element={<FeedBack />} />
             <Route path="/vouchers" element={<Voucher />} />
-            <Route path="/memberships" element={<MembershipCard />} />
+            <Route path="/membership" element={<MembershipCard />} />
           </Routes>
           <Footer/>
         </Router>
       </NotificationProvider>
     </UserProvider>
+
   );
 }
 
