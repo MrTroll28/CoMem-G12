@@ -10,7 +10,7 @@ import FeatureSection from '../components/Header/FeatureSection';
 const Home = () => {
   return (
     <div>
-      <Header />
+      
       <HeroSection />
       <div className="container mx-auto py-10">
         <ProductList title="Sản phẩm bán chạy nhất" url="/best-selling" image="/pli1.png"/>
@@ -20,7 +20,7 @@ const Home = () => {
       </div>  
       <ContactFloatButton />
       <BackToTopButton />
-      <Footer />
+    
     </div>
   );
 };

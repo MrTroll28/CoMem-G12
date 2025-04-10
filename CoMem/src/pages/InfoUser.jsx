@@ -1,40 +1,40 @@
-import { FaUserCircle, FaMoneyBill, FaClipboardList, FaStar, FaEnvelope, FaSignOutAlt } from 'react-icons/fa';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import UserMenu from '../components/User/UserMenu';
-import { useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom";
-import Info from '../components/User/Info';
-import { useNotification } from '../components/Notification';
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import UserMenu from "../components/User/UserMenu";
+import Info from "../components/User/Info";
+import { useNotification } from "../components/Notification";
+import { UserContext } from "../context/UserContext"; // Import context
+import { useRef } from "react";
 
-const InfoUser=({isLoggedin,onLogout})=>{
-    console.log("user>> ",isLoggedin)
-    const navigate = useNavigate();
-    const { addNotification } = useNotification();
-    useEffect(() => {
-        if (!isLoggedin) {
-            addNotification("Bạn cần đăng nhập để xem thông tin!!!","warning");
-            navigate("/login");
-        }
-    }, [isLoggedin, navigate]); 
+const InfoUser = () => {
+  const navigate = useNavigate();
+  const { addNotification } = useNotification();
+  const { isLoggedIn, handleLogout } = useContext(UserContext); // Lấy trạng thái và hàm từ context
+  const hasRedirected = useRef(false);
+  useEffect(() => {
+    if (!isLoggedIn && !hasRedirected.current) {
+        addNotification("Bạn cần đăng nhập để xem thông tin!", "warning");
+        hasRedirected.current = true; // Đánh dấu đã điều hướng
+        navigate("/login");
+    }
+}, [isLoggedIn, navigate, addNotification]);
 
-    if (!isLoggedin) return null;
-    return (
-        <>
-            <Header/>
+  if (!isLoggedIn) return null;
 
-                <div className='h-[500px] flex items-center justify-start  px-6 '>
-                    <div className='ml-40'>
-                    <UserMenu onLogout={onLogout}  />
-                    </div>
-                    <Info />
-                </div>
-
-            
-            <Footer/>
-        </>
-    );
-    
-}
+  return (
+    <>
+      
+      <div className="h-[500px] flex items-center justify-start px-6">
+        <div className="ml-40">
+          <UserMenu onLogout={handleLogout} />
+        </div>
+        <Info />
+      </div>
+      
+    </>
+  );
+};
 
 export default InfoUser;

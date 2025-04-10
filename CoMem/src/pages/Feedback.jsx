@@ -15,7 +15,7 @@ const FeedBack = () => {
 
     return (
         <>
-            <Header />
+           
             <div className="h-[500px] flex flex-col md:flex-row items-center justify-center px-6">
                 <div className="ml-10 md:ml-40">
                     <UserMenu />
@@ -36,7 +36,7 @@ const FeedBack = () => {
                     <button className="bg-green-200 text-emerald-800 p-2 rounded-2xl float-end hover:bg-emerald-700 hover:text-amber-50" onClick={handleSubmit}> Gửi ý kiến</button>
                 </div>
             </div>
-            <Footer />
+           
         </>
     );
 };

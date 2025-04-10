@@ -1,52 +1,40 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
-import './App.css'
-import Home from './pages/Home'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css';
+import Home from './pages/Home';
 import { NotificationProvider } from "./components/Notification";
-
-import Product from './pages/Product'
+import Product from './pages/Product';
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Reset from "./pages/Reset";
 import InfoUser from "./pages/InfoUser";
-import { useState, useEffect } from "react";
 import FeedBack from "./pages/Feedback";
-
+import Voucher from "./pages/Vouchers";
+import { UserProvider } from "./context/UserContext"; 
+import MembershipCard from "./components/MemberShipCart";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
-  // Lấy trạng thái đăng nhập từ localStorage khi ứng dụng tải lại
-  const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return localStorage.getItem("isLoggedIn") === "true";
-  });
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-    localStorage.setItem("isLoggedIn", "true"); // Lưu vào localStorage
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    localStorage.removeItem("isLoggedIn"); // Xóa khỏi localStorage
-  };
-
-  useEffect(() => {
-    console.log("Trang thái login app >>", isLoggedIn);
-  }, [isLoggedIn]);
-
   return (
-    <NotificationProvider>
-      <Router> 
-      <Routes> 
-        <Route path="/" element={<Home />} /> 
-        <Route path="/register" element={<Register />} /> 
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        <Route path="/reset" element={<Reset />} />
-        <Route path="/infouser" element={<InfoUser isLoggedin={isLoggedIn} onLogout={handleLogout}/>} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/feedback" element={<FeedBack />} />
-      </Routes> 
-    </Router> 
-    </NotificationProvider>
+    <UserProvider>
+      <NotificationProvider>
+        <Router>
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/reset" element={<Reset />} />
+            <Route path="/infouser" element={<InfoUser />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/feedback" element={<FeedBack />} />
+            <Route path="/vouchers" element={<Voucher />} />
+            <Route path="/memberships" element={<MembershipCard />} />
+          </Routes>
+          <Footer/>
+        </Router>
+      </NotificationProvider>
+    </UserProvider>
   );
 }
 

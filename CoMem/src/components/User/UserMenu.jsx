@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Modal } from 'antd';
 import { 
   FaUserCircle, FaMoneyBill, FaClipboardList, 
   FaStar, FaEnvelope, FaSignOutAlt 
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext'; // Import UserContext
 
-const UserMenu = ({ onLogout }) => {
+const UserMenu = () => {
+  const { currentUser, handleLogout } = useContext(UserContext); // Lấy user từ context
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -16,9 +18,7 @@ const UserMenu = ({ onLogout }) => {
 
   const handleConfirmLogout = () => {
     setIsModalOpen(false);
-    if (typeof onLogout === 'function') {
-      onLogout();
-    }
+    handleLogout(); // Gọi hàm logout từ context
     navigate("/"); 
   };
 
@@ -29,7 +29,9 @@ const UserMenu = ({ onLogout }) => {
   return (
     <div className="border border-[rgb(121,237,129)] rounded-lg p-5 shadow-md w-64 bg-white">
       <p className="text-gray-600">Xin chào,</p>
-      <h2 className="text-lg font-bold text-green-700">Tran Viet Nhan</h2>
+      <h2 className="text-lg font-bold text-green-700">
+        {currentUser ? currentUser.fullName : "Người dùng"}
+      </h2>
       <hr className="my-2 border-[rgb(121,237,129)]" />
       <ul className="space-y-4">
         <li 

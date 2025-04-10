@@ -74,7 +74,7 @@ const  Register=() =>{
 
   return (
     <>
-    <Header/>
+   
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-[400px] border border-gray-300">
         <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Đăng Ký Tài khoản</h2>
@@ -104,7 +104,7 @@ const  Register=() =>{
         </form>
       </div>
     </div>
-      <Footer/>
+      
     </>
   );
 }
