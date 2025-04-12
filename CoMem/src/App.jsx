@@ -11,9 +11,10 @@ import InfoUser from "./pages/InfoUser";
 import FeedBack from "./pages/Feedback";
 import Voucher from "./pages/Vouchers";
 import { UserProvider } from "./context/UserContext"; 
-import MembershipCard from "./components/MemberShipCart";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Membership from "./pages/Membership";
+import Orders from "./pages/Orders";
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
             <Route path="/product" element={<Product />} />
             <Route path="/feedback" element={<FeedBack />} />
             <Route path="/vouchers" element={<Voucher />} />
-            <Route path="/membership" element={<MembershipCard />} />
+            <Route path="/membership" element={<Membership />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
           <Footer/>
         </Router>

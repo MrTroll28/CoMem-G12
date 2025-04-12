@@ -5,7 +5,7 @@ import UserMenu from "./User/UserMenu";
 const MembershipCard = () => {
   return (
     <div className="flex justify-center items-center h-100"> 
-            <UserMenu/>
+           
             <div className="border border-gray-200 p-4 rounded-lg shadow-sm bg-white max-w-md ml-40">
       <h3 className="text-lg font-semibold text-gray-600">Hạng thành viên</h3>
       <div className="mt-2">

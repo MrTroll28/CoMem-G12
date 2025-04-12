@@ -27,10 +27,12 @@ const InfoUser = () => {
     <>
       
       <div className="h-[500px] flex items-center justify-start px-6">
-        <div className="ml-40">
+        <div className="ml-40 ">
           <UserMenu onLogout={handleLogout} />
         </div>
-        <Info />
+        <div className="ml-20 w-full">
+        <Info  />
+        </div>
       </div>
       
     </>
