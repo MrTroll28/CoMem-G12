@@ -10,7 +10,6 @@ const OrdersTable = () => {
   // Lấy dữ liệu đơn hàng từ API và lọc theo user
   useEffect(() => {
     const fetchOrders = async () => {
-      // Lấy user từ localStorage
       const user = JSON.parse(localStorage.getItem("currentUser"));
 
       if (!user?.id) {
@@ -25,7 +24,6 @@ const OrdersTable = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        // Lọc đơn hàng theo user.id
         const userOrders = Array.isArray(data)
           ? data.filter((order) => order.user.id == user.id)
           : [];
@@ -40,12 +38,10 @@ const OrdersTable = () => {
     fetchOrders();
   }, []);
 
-  // Hàm định dạng tiền
   const formatCurrency = (amount) => {
-    return `${amount.toFixed(2)} USD`; // Hoặc đổi sang VND nếu cần
+    return `${amount.toFixed(2)} USD`;
   };
 
-  // Hàm hiển thị trạng thái
   const getStatusText = (status) => {
     switch (status) {
       case "delivered":
@@ -61,18 +57,24 @@ const OrdersTable = () => {
     }
   };
 
-  // Chuẩn bị items cho Collapse
   const collapseItems = orders.map((order) => ({
     key: order.orderId,
     label: (
-      <Row justify="space-between">
-        <Col>
+      <Row
+        justify="space-between"
+        align="middle"
+        style={{
+          width: "700px",
+          padding: "0 16px",
+        }}
+      >
+        <Col xs={24} sm={8}>
           <Text strong>Mã đơn hàng: {order.orderId}</Text>
         </Col>
-        <Col>
+        <Col xs={24} sm={8} style={{ textAlign: "center" }}>
           <Text>Trạng thái: {getStatusText(order.status)}</Text>
         </Col>
-        <Col>
+        <Col xs={24} sm={8} style={{ textAlign: "right" }}>
           <Text strong>Tổng tiền: {formatCurrency(order.totalAmount)}</Text>
         </Col>
       </Row>
