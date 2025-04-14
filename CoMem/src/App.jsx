@@ -19,6 +19,7 @@ import Warranty from "./pages/Warranty";
 import NotFound from "./pages/NotFound";
 import ReturnPolicy from "./pages/ReturnPolicy";
 import ProductDetail from "./pages/ProductDetail";
+import Story from "./pages/Story";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/return-policy" element={<ReturnPolicy />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/product/:productId" element={<ProductDetail />} />
+            <Route path="/story" element={<Story />} />
           </Routes>
           <Footer/>
         </Router>

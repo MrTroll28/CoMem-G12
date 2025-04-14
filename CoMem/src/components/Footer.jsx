@@ -11,9 +11,9 @@ const Footer = () => {
           <h4 className="text-lg font-semibold mb-3">Về Cỏ Mềm</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#" className="hover:text-gray-300 transition">
+              <Link to={"/story"} className="hover:text-gray-300 transition">
                 Chuyện của Cỏ
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="hover:text-gray-300 transition">
