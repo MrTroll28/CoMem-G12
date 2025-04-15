@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
-
+import { toast } from 'react-toastify';
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -67,6 +67,8 @@ function ProductDetail() {
     };
   
     dispatch({ type: 'ADD_TO_CART', payload: item });
+  
+    toast.success('Đã thêm vào giỏ hàng 🎉');
   };
 
   return (

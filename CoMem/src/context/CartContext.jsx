@@ -28,6 +28,13 @@ const cartReducer = (state, action) => {
     case 'REMOVE_FROM_CART':
       return state.filter((i, index) => index !== action.payload);
 
+    case 'UPDATE_QUANTITY':
+      return state.map((item, index) =>
+        index === action.payload.index
+          ? { ...item, quantity: action.payload.quantity }
+          : item
+      );
+
     default:
       return state;
   }

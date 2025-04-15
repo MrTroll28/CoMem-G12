@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NotificationProvider } from "./components/Notification";
 import { UserProvider } from "./context/UserContext"; 
 import { CartProvider } from "./context/CartContext";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Cart from './pages/Cart';
 import './App.css';
 import Home from './pages/Home';
@@ -29,6 +31,7 @@ function App() {
         <CartProvider>
           <Router>
             <Header/>
+            <ToastContainer position="top-right" autoClose={3000} />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/cart" element={<Cart />} />
