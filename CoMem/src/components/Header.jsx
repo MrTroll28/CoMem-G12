@@ -9,7 +9,6 @@ import { FaShoppingCart } from "react-icons/fa";
 import DropMenuUser from "./DropMenuUser";
 
 const Header = () => {
-
   return (
     <header className="w-full z-50">
       <div className="bg-[url(/HeaderBG.webp)]">
@@ -28,25 +27,31 @@ const Header = () => {
             </div>
             {/* Map & User */}
             <div className="flex items-center justify-center mx-[-5px]">
-              <a href="/" className="mr-[30px] flex items-center">
-                  <FaStoreAlt className="text-white text-[34px]"/>
-                  <div className="text-[13px] font-medium ml-[8px] uppercase text-white">
-                      hệ thống
-                      <br />
-                      cửa hàng
-                  </div>
-              </a>
+              <Link to="/" className="mr-[30px] flex items-center">
+                <FaStoreAlt className="text-white text-[34px]" />
+                <div className="text-[13px] font-medium ml-[8px] uppercase text-white">
+                  hệ thống
+                  <br />
+                  cửa hàng
+                </div>
+              </Link>
               <div className="mr-[30px]">
-                <a href=""><DropMenuUser/></a>
+                <Link to="/user">
+                  <DropMenuUser />
+                </Link>
               </div>
               <div className="mr-[30px]">
-                <a href=""><FaHeart className="text-white text-[28px]"/></a>
+                <Link to="/favorites">
+                  <FaHeart className="text-white text-[28px]" />
+                </Link>
               </div>
               <div className="mr-[30px]">
-                <a href="">
-                  <FaShoppingCart className="text-white text-[28px]"/>
-                  <span className="bg-[rgba(230,126,34,0.8)] rounded-full text-white text-[13px] leading-[1em] px-[7px] py-[4px] absolute right-[15px] top-[5px]">1</span>
-                </a>
+                <Link to="/cart">
+                  <FaShoppingCart className="text-white text-[28px]" />
+                  <span className="bg-[rgba(230,126,34,0.8)] rounded-full text-white text-[13px] leading-[1em] px-[7px] py-[4px] absolute right-[15px] top-[5px]">
+                    1
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
@@ -58,6 +63,6 @@ const Header = () => {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

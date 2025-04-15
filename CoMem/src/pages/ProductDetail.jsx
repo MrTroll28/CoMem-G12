@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { useCart } from '../context/CartContext';
+
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -49,6 +49,24 @@ function ProductDetail() {
 
   const handleColorSelect = (color) => {
     setSelectedColor(color);
+  };
+
+  const { dispatch } = useCart();
+
+  const handleAddToCart = () => {
+    if (!selectedSize || !selectedColor) return;
+  
+    const item = {
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.priceNow,
+      selectedSize,
+      selectedColor,
+      quantity
+    };
+  
+    dispatch({ type: 'ADD_TO_CART', payload: item });
   };
 
   return (
@@ -142,6 +160,7 @@ function ProductDetail() {
                     <button onClick={() => handleQuantityChange(quantity + 1)} className="text-2xl px-3">+</button>
                   </div>
                   <button
+                    onClick={handleAddToCart}
                     disabled={!product.inStock || !selectedSize || !selectedColor}
                     className={`flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold shadow-lg transition-transform transform ${
                       product.inStock && selectedSize && selectedColor
