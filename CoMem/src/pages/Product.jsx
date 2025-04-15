@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; // Thay thế useHistory bằng useNavigate
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FiShoppingBag } from 'react-icons/fi';
 import { MdCategory } from 'react-icons/md';
 import { GiClothes } from 'react-icons/gi';
@@ -11,17 +11,20 @@ import ProductCard from '../components/ProductCard';
 import '../css/product.css';
 
 function Product() {
-  const location = useLocation();  // Lấy thông tin URL hiện tại
-  const navigate = useNavigate();  // Sử dụng useNavigate thay cho useHistory
+  const location = useLocation(); // Lấy thông tin URL hiện tại
+  const navigate = useNavigate(); // Dùng useNavigate để điều hướng
 
+  // Lấy các giá trị từ query parameter
   const queryParams = new URLSearchParams(location.search);
   const initialCategory = queryParams.get('category') || 'All';
   const initialPriceRange = Number(queryParams.get('priceRange')) || 200;
   const initialSortBy = queryParams.get('sortBy') || 'default';
+  const initialKeyword = queryParams.get('keyword') || '';
 
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [priceRange, setPriceRange] = useState(initialPriceRange);
   const [sortBy, setSortBy] = useState(initialSortBy);
+  const [keyword, setKeyword] = useState(initialKeyword);
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,23 +49,26 @@ function Product() {
         setError('Failed to fetch products. Please try again later.');
         setLoading(false);
       });
-  }, []); // Chỉ chạy một lần khi component được mount
+  }, []); // Chỉ chạy 1 lần khi component được mount
 
-  // Đồng bộ category với URL khi nó thay đổi
+  // Đồng bộ lại các giá trị lọc khi URL thay đổi
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const currentCategory = queryParams.get('category') || 'All';
-    setSelectedCategory(currentCategory);
+    setSelectedCategory(queryParams.get('category') || 'All');
+    setPriceRange(Number(queryParams.get('priceRange')) || 200);
+    setSortBy(queryParams.get('sortBy') || 'default');
+    setKeyword(queryParams.get('keyword') || '');
   }, [location.search]);
 
-  const categories = ['All', ...new Set(products.map(product => product.category))];
-
+  // Bộ lọc sản phẩm: lọc theo danh mục, giá và từ khóa tìm kiếm
   const filteredProducts = products.filter(product => {
     const categoryMatch = selectedCategory === 'All' || product.category === selectedCategory;
     const priceMatch = product.priceNow <= priceRange;
-    return categoryMatch && priceMatch;
+    const keywordMatch = keyword === '' || product.name.toLowerCase().includes(keyword.toLowerCase());
+    return categoryMatch && priceMatch && keywordMatch;
   });
 
+  // Hàm sắp xếp sản phẩm
   const sortProducts = (products) => {
     switch (sortBy) {
       case 'price-low':
@@ -83,13 +89,13 @@ function Product() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // Khi người dùng chọn một danh mục, cập nhật URL với tham số category mới
+  // Khi người dùng chọn danh mục, cập nhật URL
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setCurrentPage(1);
     navigate({
       pathname: '/product',
-      search: `?category=${category}&priceRange=${priceRange}&sortBy=${sortBy}`,
+      search: `?category=${category}&priceRange=${priceRange}&sortBy=${sortBy}&keyword=${encodeURIComponent(keyword)}`,
     });
   };
 
@@ -100,6 +106,7 @@ function Product() {
       </span>
       <div className='min-h-screen bg-gray-50 py-10 z-0'>
         <div className="container mx-auto px-4 py-8">
+          {/* Title Section */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-primary flex items-center gap-2">
               <FiShoppingBag className="text-[var(--color-primary)]" />
@@ -117,6 +124,7 @@ function Product() {
             </div>
           ) : (
             <div className="flex gap-8">
+              {/* Left Sidebar - Danh mục sản phẩm */}
               <div className="w-64 flex-shrink-0">
                 <div className="bg-white p-4 rounded-lg shadow-sm sticky top-[180px]">
                   <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
@@ -124,7 +132,7 @@ function Product() {
                     Categories
                   </h2>
                   <div className="flex flex-col gap-2">
-                    {categories.map(category => (
+                    {['All', ...new Set(products.map(p => p.category))].map(category => (
                       <button
                         key={category}
                         onClick={() => handleCategoryChange(category)}
@@ -171,6 +179,7 @@ function Product() {
                 </div>
               </div>
 
+              {/* Main Content - Sản phẩm */}
               <div className="flex-1">
                 <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
                   <div className="flex items-center justify-between">
