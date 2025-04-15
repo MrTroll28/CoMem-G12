@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 const ProductCard = ({ product }) => {
-  const { id, name, priceNow, priceOld, tagSale, image, category, link } = product;
+  const { id, name, priceNow, priceOld, tagSale, image, category } = product;
 
   return (
     <div id={id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
         </div>
         
         <Link 
-          to={link} 
+          to={`/product/${id}`} 
           className="mt-3 block text-center bg-primary text-white py-2 rounded-md hover:bg-primary-dark transition-colors duration-300"
         >
           View Details

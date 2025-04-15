@@ -29,7 +29,7 @@ const Navigator = () => {
             onMouseEnter={() => setHoveredMenu(index)}
             onMouseLeave={() => setHoveredMenu(null)}
           >
-            <Link to={menu.link}
+            <Link to={"/product"}
               className="inline-flex items-center text-white font-medium 
                          text-[15.5px] h-[42px] px-[15px] capitalize 
                          hover:border-b-2 border-grey-500 ease-in-out transition-all"
@@ -57,7 +57,7 @@ const Navigator = () => {
                             : "hover:bg-gray-100"
                         }`}
                       >
-                        <Link to={sub.link}
+                        <Link to={"/product"}
                           className="flex items-center justify-between text-gray-700"
                         >
                           {sub.name}

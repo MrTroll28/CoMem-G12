@@ -75,7 +75,7 @@ function Product() {
       <span className='fixed top-0 left-0 w-full z-50'>
         <Header />
       </span>
-      <div className='min-h-screen bg-gray-50 py-28 z-0'>
+      <div className='min-h-screen bg-gray-50 py-10 z-0'>
         <div className="container mx-auto px-4 py-8">
           {/* Title Section */}
           <div className="mb-8">
