@@ -43,8 +43,6 @@ function Cart() {
       ) : (
         <div className="space-y-6">
           {cart.map((item, index) => (
-            
-            <Link to={`/product/${item.productId}`} key={index} className="block hover:bg-gray-100 transition duration-200">
               <div className="flex items-center justify-between bg-white p-4 rounded shadow">
                 <div className="flex items-center gap-4">
                   <img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded" />
@@ -110,7 +108,6 @@ function Cart() {
                   Xoá
                 </button>
               </div>
-            </Link>
           ))}
           <div className="text-right text-xl font-bold text-gray-800">
             Tổng cộng: ${total.toFixed(2)}
