@@ -23,6 +23,8 @@ import NotFound from "./pages/NotFound";
 import ReturnPolicy from "./pages/ReturnPolicy";
 import ProductDetail from "./pages/ProductDetail";
 import Story from "./pages/Story";
+import Checkout from "./pages/Checkout";
+import ThankYou from "./pages/ThankYou";
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/reset" element={<Reset />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/thank-you" element={<ThankYou />} />
               <Route path="/infouser" element={<InfoUser />} />
               <Route path="/product" element={<Product />} />
               <Route path="/feedback" element={<FeedBack />} />

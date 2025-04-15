@@ -43,7 +43,7 @@ function Cart() {
       ) : (
         <div className="space-y-6">
           {cart.map((item, index) => (
-              <div className="flex items-center justify-between bg-white p-4 rounded shadow">
+              <div key={item.productId} className="flex items-center justify-between bg-white p-4 rounded shadow">
                 <div className="flex items-center gap-4">
                   <img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded" />
                   <div>
@@ -112,6 +112,14 @@ function Cart() {
           <div className="text-right text-xl font-bold text-gray-800">
             Tổng cộng: ${total.toFixed(2)}
           </div>
+            <div className="flex justify-center">
+                <Link
+                to="/checkout"
+                className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition duration-200"
+                >
+                Thanh toán
+                </Link>
+            </div>
         </div>
       )}
     </div>
