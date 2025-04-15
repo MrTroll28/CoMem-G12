@@ -7,8 +7,11 @@ import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import DropMenuUser from "./DropMenuUser";
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
+  const { totalQuantity } = useCart();
+  
   return (
     <header className="w-full z-50">
       <div className="bg-[url(/HeaderBG.webp)]">
@@ -46,12 +49,14 @@ const Header = () => {
                 </Link>
               </div>
               <div className="mr-[30px]">
-                <Link to="/cart">
-                  <FaShoppingCart className="text-white text-[28px]" />
-                  <span className="bg-[rgba(230,126,34,0.8)] rounded-full text-white text-[13px] leading-[1em] px-[7px] py-[4px] absolute right-[15px] top-[5px]">
-                    1
+              <Link to="/cart" className="relative">
+                <FaShoppingCart className="text-white text-[28px]" />
+                {totalQuantity > 0 && (
+                  <span className="bg-[rgba(230,126,34,0.8)] rounded-full text-white text-[13px] leading-[1em] px-[7px] py-[4px] absolute right-[-13px] top-[-11px]">
+                    {totalQuantity}
                   </span>
-                </Link>
+                )}
+              </Link>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 const CartContext = createContext();
 
@@ -41,10 +41,24 @@ const cartReducer = (state, action) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const [cart, dispatch] = useReducer(cartReducer, []);
+  // Lấy giỏ hàng từ localStorage hoặc khởi tạo giỏ hàng rỗng nếu không có
+  const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const [cart, dispatch] = useReducer(cartReducer, initialCart);
+
+  // Lưu giỏ hàng vào localStorage mỗi khi cart thay đổi
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  // Tính tổng số lượng tất cả sản phẩm
+  const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+
+  // Tính số sản phẩm không trùng lặp (theo id + biến thể size/color)
+  const uniqueItemCount = cart.length;
 
   return (
-    <CartContext.Provider value={{ cart, dispatch }}>
+    <CartContext.Provider value={{ cart, dispatch, totalQuantity, uniqueItemCount }}>
       {children}
     </CartContext.Provider>
   );
