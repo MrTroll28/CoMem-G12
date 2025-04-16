@@ -5,13 +5,13 @@ import Footer from "../components/Footer";
 import UserMenu from "../components/User/UserMenu";
 import Info from "../components/User/Info";
 import { useNotification } from "../components/Notification";
-import { UserContext } from "../context/UserContext"; // Import context
+import { UserContext } from "../context/UserContext"; 
 import { useRef } from "react";
 
 const InfoUser = () => {
   const navigate = useNavigate();
   const { addNotification } = useNotification();
-  const { isLoggedIn, handleLogout } = useContext(UserContext); // Lấy trạng thái và hàm từ context
+  const { isLoggedIn, handleLogout } = useContext(UserContext); 
   const hasRedirected = useRef(false);
   useEffect(() => {
     if (!isLoggedIn && !hasRedirected.current) {
