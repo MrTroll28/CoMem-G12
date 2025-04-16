@@ -5,9 +5,12 @@ const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const voucherRoutes = require("./routes/voucherRoutes");
 const ordersRoutes = require("./routes/ordersRoutes");
+const connectDB = require('./config/db');
 
 const app = express();
 const PORT = 5000;
+
+connectDB();
 
 app.use(cors());
 app.use(express.json());
