@@ -3,10 +3,11 @@ import { Button, Divider, Table } from "antd";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UserMenu from "../components/User/UserMenu";
+import { Link, useNavigate } from "react-router-dom";
 
 const Voucher = () => {
   const [data, setData] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     let isMounted = true;
     
@@ -58,7 +59,7 @@ const Voucher = () => {
 
   const handleUseVoucher = (voucher) => {
     console.log("Voucher được chọn:", voucher);
-    alert(`Bạn đã chọn voucher: ${voucher.name}`);
+   navigate("/cart")
   };
 
   return (

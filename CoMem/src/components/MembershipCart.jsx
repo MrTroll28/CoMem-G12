@@ -7,7 +7,7 @@ const { Text } = Typography;
 const MembershipCard = () => {
   const { currentUser } = useContext(UserContext); // Lấy currentUser từ context
 
-  // Xử lý trường hợp chưa đăng nhập
+  
   if (!currentUser) {
     return (
       <div className="flex justify-center items-center h-100">
@@ -18,7 +18,7 @@ const MembershipCard = () => {
     );
   }
 
-  // Giả định currentUser có các trường: fullName, phone, points, membershipLevel
+ 
   const { fullName, phone, points = 123, membershipLevel = "Hạng Bạc" } = currentUser;
 
   return (

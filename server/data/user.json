@@ -47,5 +47,19 @@
     "phone": "0123456789",
     "email": "omg@gmail.com",
     "password": "123"
+  },
+  {
+    "id": 1742289798813,
+    "fullName": "Trần Việt Nhân",
+    "phone": "0123456789",
+    "email": "omg1@gmail.com",
+    "password": "1234"
+  },
+  {
+    "id": 1742289798814,
+    "fullName": "Trần Việt Nhân",
+    "phone": "0123456789",
+    "email": "omg2@gmail.com",
+    "password": "123"
   }
 ]

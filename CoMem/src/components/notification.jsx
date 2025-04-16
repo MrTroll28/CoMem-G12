@@ -20,7 +20,7 @@ export const NotificationProvider = ({ children }) => {
   const [notifications, dispatch] = useReducer(notificationReducer, []);
 
   const addNotification = (message, type = "success") => {
-    const id = uuidv4(); // ✅ Tạo ID duy nhất
+    const id = uuidv4(); 
     dispatch({
       type: "ADD_NOTIFICATION",
       payload: { id, message, type }

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Dropdown, message, Space } from 'antd';
 import { FaUser } from 'react-icons/fa6';
 import { DownOutlined } from '@ant-design/icons';
-import { useEffect } from "react"
+
 const DropMenuUser = () => {
   const navigate = useNavigate();
  
@@ -13,6 +13,9 @@ const DropMenuUser = () => {
       navigate('/infouser');
     } else if(key==='3'){
       navigate('/feedback')
+    } 
+    else if(key==='2'){
+      navigate('/orders')
     } 
 
     else {

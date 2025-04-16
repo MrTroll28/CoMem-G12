@@ -7,7 +7,7 @@ const OrdersTable = () => {
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState(null);
 
-  // Lấy dữ liệu đơn hàng từ API và lọc theo user
+ 
   useEffect(() => {
     const fetchOrders = async () => {
       const user = JSON.parse(localStorage.getItem("currentUser"));
