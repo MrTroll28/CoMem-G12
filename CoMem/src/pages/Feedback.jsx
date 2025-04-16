@@ -1,9 +1,8 @@
-import { Button } from "antd";
-import Footer from "../components/Footer"
-import Header from "../components/Header"
-
 import UserMenu from "../components/User/UserMenu"
 import { useNotification } from "../components/Notification";
+import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useRef } from "react";
+import { UserContext } from "../context/UserContext";
 
 
 const FeedBack = () => {
@@ -12,6 +11,17 @@ const FeedBack = () => {
     const handleSubmit=()=>{
         addNotification("Cỏ mềm xin cảm ơn bạn đã đóng góp ý kiến!!!","success");
     }
+    const navigate = useNavigate();
+   
+    const { isLoggedIn, handleLogout } = useContext(UserContext); 
+    const hasRedirected = useRef(false);
+    useEffect(() => {
+      if (!isLoggedIn && !hasRedirected.current) {
+          addNotification("Bạn cần đăng nhập để xem thông tin!", "warning");
+          hasRedirected.current = true; // Đánh dấu đã điều hướng
+          navigate("/login");
+      }
+  }, [isLoggedIn, navigate, addNotification]);
 
     return (
         <>

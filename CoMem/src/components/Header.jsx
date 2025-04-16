@@ -39,9 +39,9 @@ const Header = () => {
                 </div>
               </Link>
               <div className="mr-[30px]">
-                <Link to="/infouser">
+               
                   <DropMenuUser />
-                </Link>
+                
               </div>
               <div className="mr-[30px]">
                 <Link to="/favorites">

@@ -8,13 +8,14 @@ const DropMenuUser = () => {
   const navigate = useNavigate();
  
   const handleMenuClick = ({ key }) => {
-    if (key === '1') {
+    console.log(">>>"+key);
+    if (key == '1') {
       
       navigate('/infouser');
-    } else if(key==='3'){
+    } else if(key=='3'){
       navigate('/feedback')
     } 
-    else if(key==='2'){
+    else if(key=='2'){
       navigate('/orders')
     } 
 
@@ -31,12 +32,12 @@ const DropMenuUser = () => {
     {
       label: 'Danh sách đơn hàng',
       key: '2',
-      link: '/oderlist',
+     
     },
     {
       label: 'Gửi ý kiến',
       key: '3',
-      link: '/feedback',
+     
     },
     
   ];

@@ -15,14 +15,6 @@
           "quantity": 2,
           "subtotal": 59.98,
           "image": "https://images.pexels.com/photos/3760271/pexels-photo-3760271.jpeg"
-        },
-        {
-          "productId": 2,
-          "name": "Leather Crossbody Bag",
-          "priceNow": 89.99,
-          "quantity": 1,
-          "subtotal": 89.99,
-          "image": "https://images.pexels.com/photos/2916814/pexels-photo-2916814.jpeg"
         }
       ],
       "totalAmount": 149.97,
@@ -45,15 +37,8 @@
           "quantity": 1,
           "subtotal": 59.99,
           "image": "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg"
-        },
-        {
-          "productId": 7,
-          "name": "Running Sneakers",
-          "priceNow": 99.99,
-          "quantity": 1,
-          "subtotal": 99.99,
-          "image": "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg"
         }
+       
       ],
       "totalAmount": 159.98,
       "orderDate": "2025-04-11",
